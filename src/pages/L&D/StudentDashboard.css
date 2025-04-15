@@ -1,0 +1,272 @@
+/* General Dashboard Layout */
+.studentDashboard {
+  padding: 30px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: #0077cc;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Tabs */
+.tabs {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tab {
+  padding: 12px 20px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab.active {
+  background-color: #0077cc;
+  color: white;
+}
+
+.tab:hover {
+  background-color: #0077cc;
+  color: white;
+}
+
+/* Notes Layout */
+.notesLayout {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.notesList {
+  width: 30%;
+  padding-right: 20px;
+}
+
+.notesList ul {
+  list-style: none;
+  padding: 0;
+}
+
+.notesList li button {
+  display: block;
+  margin-bottom: 10px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.notesList li button:hover {
+  background-color: #0077cc;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Note Content */
+.noteContent {
+  flex: 2;
+  padding-left: 20px;
+  border-left: 2px solid #ddd;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.noteContent h3 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.noteContent a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.noteContent a:hover {
+  text-decoration: underline;
+}
+
+.noteContent iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Attendance */
+.glassBox {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 20px;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.attendanceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.tag {
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #efefef;
+  font-size: 0.9em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.tag.present {
+  background-color: #4caf50;
+  color: white;
+}
+
+.tag.absent {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Marks Table */
+.marksTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.marksTable th,
+.marksTable td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 1em;
+  background-color: #fafafa;
+}
+
+.marksTable th {
+  background-color: #0077cc;
+  color: white;
+}
+
+.marksTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.marksTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+.marksTable td {
+  font-weight: 500;
+}
+
+/* Error Message */
+.error-message {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .notesLayout {
+    flex-direction: column;
+  }
+
+  .notesList {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .noteContent {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tab {
+    margin-bottom: 10px;
+  }
+
+  .glassBox {
+    padding: 20px;
+  }
+}
+
+.noteContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.noteDetail {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.noteDetail h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #0077cc;
+}
+
+.noteContent iframe,
+.noteContent img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.noteContent pre {
+  background-color: #f4f7fb;
+  padding: 15px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
